@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Rate My Band</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="stylesheets/signin.css">
+  <link rel="stylesheet" href="stylesheets/twitter.css">
+  <link rel="stylesheet" href="stylesheets/modal.css"/>
+</head>
+
+<body class="container">
+  <header>
+    <a href="index.html">
+      <h3>Rate My Band</h3>
+    </a>
+    <div data-user-info="display-username"></div>
+  </header>
+
+  <!--modal for signin-->
+  <div id="login-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signin="form">
+          <h2 class="form-signin-heading">Please sign in</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <!--modal for signup-->
+  <div id="signup-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signup="form">
+          <h2 class="form-signin-heading">Welcome</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="username1" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="password1" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <!--modal for bad login credentials-->
+  <div id="badcredentials-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+          <h2 class="form-signin-heading" font>401:<br>Bad Credentials<br><br></h2>
+          <button type="button" class="btn btn-kelly-red" id="LoginButton2">Try Again</button>
+          <button type="button" class="btn btn-kelly-red" id="SignupButton2">Create an Account</button>
+      </div>
+    </label>
+  </div>
+
+  <!-- Login and Signup Buttons-->
+  <section>
+    <div class="panel panel-footer" data-login-buttons="buttons">
+      <button type="button" class="btn btn-default" id="LoginButton">Login</button>
+      <button type="button" class="btn btn-kelly-yellow" id="SignupButton">Create an Account</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="panel panel-footer">
+      <div data-current-video="current"><!--band information goes here --></div>
+      <div id="voteCount" data-vote-count="display"><!--vote count goes here--></div>
+    </div>
+
+      <div class="panel-body">
+        <form data-user-comment="form">
+          <div class="kellys-inline">
+            <!--upvote and downvote radio buttons-->
+            <div class="vote-selector kellys-arrows">
+              <input id="upvote" type="radio" name="vote" value="upvote" />
+              <label class="drinkcard-cc upvote" for="upvote"></label>
+              <input id="downvote" type="radio" name="vote" value="downvote" />
+              <label class="drinkcard-cc downvote" for="downvote"></label>
+            </div>
+            <div class="kellys-divider kellys-arrows"></div>
+            <div class="kellys-divider"></div>
+            <div class="kellys-comment">
+              <label for="userComment"> </label>
+              <div class="kellys-commnet-textinput">
+                <input class="form-control" name="comment" placeholder="Add a comment" id="userComment" autofocus/>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <div class="panel panel-footer">
+        <h4>Comments:</h4>
+        <div data-user-comment="comment"></div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <!--for modal-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!--my scripts-->
+  <script src="scripts/changedom.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/databaseHandler.js" charset="utf-8"></script>
+  <script src="scripts/main2.js" charset="utf-8"></script>
+</body>
+</html>

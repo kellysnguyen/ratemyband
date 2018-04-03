@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"videoLink": {
+			"name": "videoLink",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "videoLink",
+			"order": 0
+		},
+		"bandName": {
+			"name": "bandName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "bandName",
+			"order": 1
+		},
+		"performanceDate": {
+			"name": "performanceDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "performanceDate",
+			"order": 2
+		},
+		"performanceLocation": {
+			"name": "performanceLocation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "performanceLocation",
+			"order": 3
+		},
+		"genre": {
+			"name": "genre",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "genre",
+			"order": 4
+		}
+	}
+}

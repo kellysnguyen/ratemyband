@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Rate My Band</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="stylesheets/signin.css">
+  <link rel="stylesheet" href="stylesheets/twitter.css">
+  <link rel="stylesheet" href="stylesheets/modal.css" />
+</head>
+
+<body class="container">
+  <header>
+    <a href="index.html">
+      <h3>Rate My Band</h3>
+    </a>
+    <div data-user-info="display-username"></div>
+  </header>
+
+  <!--modal for signin-->
+  <div id="login-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signin="form">
+          <h2 class="form-signin-heading">Please sign in</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <!--modal for uploading-->
+  <div id="upload-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-upload" data-upload="form" id="form-upload">
+          <h2 class="form-signin-heading">Upload a Video</h2>
+          <p>Please link a video to the performance and enter the name of the band and time and location of the performance.</p>
+
+          <select name="genre" form="form-upload">
+            <option value="Pop">Pop</option>
+            <option value="Lo-Fi">Lo-Fi</option>
+            <option value="AGT">AGT</option>
+            <option value="Vevo">Vevo</option>
+          </select>
+
+          <label for="videoLink" class="sr-only">Embeded Video Link</label>
+          <input type="text" name="videoLink" id="videoLink" class="form-control" placeholder="Embedded Video Link" value="" required autofocus>
+
+          <label for="bandName" class="sr-only">Band Name</label>
+          <input type="text" name="bandName" id="bandName" class="form-control" placeholder="Band Name" required value="">
+
+          <label for="performanceLocation" class="sr-only">Performance Location</label>
+          <input type="text" name="performanceLocation" id="performanceLocation" class="form-control" required placeholder="Los Angeles, CA" value="">
+
+          <label for="performanceDate" class="sr-only">Performance Date</label>
+          <input type="date" name="performanceDate" id="performanceDate" class="form-control" required value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <!--modal for signup-->
+  <div id="signup-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signup="form">
+          <h2 class="form-signin-heading">Welcome</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="username1" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="password1" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <!--modal for bad login credentials-->
+  <div id="badcredentials-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+          <h2 class="form-signin-heading" font>401:<br>Bad Credentials<br><br></h2>
+          <button type="button" class="btn btn-kelly-red" id="LoginButton2">Try Again</button>
+          <button type="button" class="btn btn-kelly-red" id="SignupButton2">Create an Account</button>
+      </div>
+    </label>
+  </div>
+
+  <!-- Login Button-->
+  <section>
+    <div class="panel panel-footer" data-login-buttons="buttons">
+      <button type="button" class="btn btn-default" id="LoginButton">Login</button>
+      <button type="button" class="btn btn-kelly-yellow" id="SignupButton">Create an Account</button>
+    </div>
+
+    <div>
+      <h4>Performances:</h4>
+    </div>
+
+    <div class="panel panel-footer">
+      <h4>Pop</h4>
+      <div data-genre-type="Pop" class="kellys-container">
+        <!--Pop videos go here-->
+      </div>
+    </div>
+
+    <div class="panel panel-footer">
+      <h4>Lo-Fi</h4>
+      <div data-genre-type="Lofi" class="kellys-container">
+        <!--LoFi videos go here-->
+      </div>
+    </div>
+
+    <div class="panel panel-footer">
+      <h4>AGT</h4>
+      <div data-genre-type="AGT" class="kellys-container">
+        <!--AGT videos go here-->
+      </div>
+    </div>
+
+    <div class="panel panel-footer">
+      <h4>Vevo</h4>
+      <div data-genre-type="Vevo" class="kellys-container">
+        <!--Vevo videos go here-->
+      </div>
+    </div>
+
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <!--for modal-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!--my scripts-->
+  <script src="scripts/changedom.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/databaseHandler.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</html>
